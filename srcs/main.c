@@ -6,7 +6,7 @@
 /*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:02:07 by estrong           #+#    #+#             */
-/*   Updated: 2022/10/03 19:20:16 by estrong          ###   ########.fr       */
+/*   Updated: 2022/10/04 19:44:37 by estrong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 void    init_var(t_game *game)
 {
-    game->map->map = ft_spleat("111111\n100001\n101001\n101001\n100001\n100N01");
+    char    *str;
+
+    str = ft_strdup("111111 100001 101001 101001 100001 100N01");
+    game->map = (t_map *)malloc(sizeof(t_map *));
+    game->map->map = ft_split(str, ' ');
 	game->north = ft_strdup("north.xmp");
 	game->south = ft_strdup("south.xmp");
 	game->west = ft_strdup("west.xmp");
@@ -22,15 +26,16 @@ void    init_var(t_game *game)
 	game->C = ft_strdup("225,30,0");
 	game->F = ft_strdup("220,100,0");
 	game->orient = 'N';
+    // printf("%s\n", "naxren");
 }
 
-void   error(char *err, t_game *game)
-{
-    if (game)
-        game = NULL;
-    perror(err);
-    exit(1);
-}
+// void   error(char *err, t_game *game)
+// {
+//     if (game)
+//         game = NULL;
+//     perror(err);
+//     exit(1);
+// }
 
 // void    free(t_game *game)
 // {
@@ -41,10 +46,11 @@ int main(int ac, char **av)
 {
     t_game  game;
 
-    if (ac != 2)
-        error("Error\n invalid number of parameters", &game);
+    printf("%x\n", ac);
+    // if (ac != 2)
+    //     error("Error\n invalid number of parameters", &game);
     init_var(&game);
     start(&game);
-
+    printf("%s\n", av[0]);
     return (0);
 }

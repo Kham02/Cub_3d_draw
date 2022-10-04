@@ -6,7 +6,7 @@
 /*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:58:45 by estrong           #+#    #+#             */
-/*   Updated: 2022/10/03 20:08:40 by estrong          ###   ########.fr       */
+/*   Updated: 2022/10/04 20:12:07 by estrong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
-// # include "../minilibx_opengl/mlx.h"
+# include "../minilibx_opengl/mlx.h"
 
 # include "../Libft/libft.h"
-# include "../srcs/get_next_line.h"
+// # include "../srcs/get_next_line.h"
 
 
 
@@ -58,8 +58,8 @@ typedef struct	s_game
 	char	*west;
 	char	*east;
 	int		fd;
-	int		*F;
-	int		*C;
+	char	*F;
+	char	*C;
 	char	orient;
 }t_game;
 
@@ -68,6 +68,8 @@ typedef struct	s_game
 void    init_var(t_game *game);
 void	start(t_game *game);
 void	draw(t_game *game);
+int		create_trgb(int t, int r, int g, int b);
+void	draw_floor_celling(t_game *game);
 
 // ############## fun ##############
 

@@ -6,12 +6,11 @@
 #    By: estrong <estrong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 19:00:53 by estrong           #+#    #+#              #
-#    Updated: 2022/10/03 19:00:56 by estrong          ###   ########.fr        #
+#    Updated: 2022/10/04 19:19:18 by estrong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		= 	main.c		parse.c	get_next_line.c		get_next_line_utils.c	\
-				get_texture.c	get_color.c 	utils.c		get_map.c
+SRCS		= 	main.c	start.c
 
 SRCS_B		= 
 
