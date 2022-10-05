@@ -6,7 +6,7 @@
 /*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:58:45 by estrong           #+#    #+#             */
-/*   Updated: 2022/10/04 20:12:07 by estrong          ###   ########.fr       */
+/*   Updated: 2022/10/05 19:55:39 by estrong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@
 
 // ############## struct ##############
 
+typedef struct s_raycasting
+{
+	float	dist;
+	float	pos_x;
+	float	pos_y;
+	t_img	texture;
+	int		s;
+};
+
 typedef struct	s_map
 {
 	char	**map;
@@ -49,6 +58,7 @@ typedef struct	s_img
 
 typedef struct	s_game
 {
+	float	pos;
 	t_img	*imgs;
 	t_map	*map;
 	void	*mlx;
