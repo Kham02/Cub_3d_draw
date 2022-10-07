@@ -6,7 +6,7 @@
 /*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:02:07 by estrong           #+#    #+#             */
-/*   Updated: 2022/10/04 19:44:37 by estrong          ###   ########.fr       */
+/*   Updated: 2022/10/07 23:56:44 by estrong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void    init_var(t_game *game)
 {
     char    *str;
 
-    str = ft_strdup("111111 100001 101001 101001 100001 100N01");
+    str = ft_strdup("111111 100001 101001 101001 100001 100N01 111111");
     game->map = (t_map *)malloc(sizeof(t_map *));
     game->map->map = ft_split(str, ' ');
 	game->north = ft_strdup("north.xmp");
@@ -26,7 +26,11 @@ void    init_var(t_game *game)
 	game->C = ft_strdup("225,30,0");
 	game->F = ft_strdup("220,100,0");
 	game->orient = 'N';
-    // printf("%s\n", "naxren");
+    game->rayc = (t_raycasting *)malloc(sizeof(t_raycasting *));
+    game->rayc->rot = -1.0;
+    game->pers = (t_pers *)malloc(sizeof(t_pers *));
+    game->pers->y = 5.0;
+    game->pers->x = 3.0;
 }
 
 // void   error(char *err, t_game *game)
@@ -37,19 +41,14 @@ void    init_var(t_game *game)
 //     exit(1);
 // }
 
-// void    free(t_game *game)
-// {
-
-// }
-
 int main(int ac, char **av)
 {
     t_game  game;
 
-    printf("%x\n", ac);
     // if (ac != 2)
     //     error("Error\n invalid number of parameters", &game);
     init_var(&game);
+    printf("%x\n", ac);
     start(&game);
     printf("%s\n", av[0]);
     return (0);

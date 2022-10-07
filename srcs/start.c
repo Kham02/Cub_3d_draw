@@ -6,7 +6,7 @@
 /*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:22:06 by estrong           #+#    #+#             */
-/*   Updated: 2022/10/05 19:31:39 by estrong          ###   ########.fr       */
+/*   Updated: 2022/10/07 23:44:54 by estrong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	draw(t_game *game)
 	game->imgs->addr = mlx_get_data_addr(game->imgs->img, &game->imgs->bits_per_pixel, \
 		&game->imgs->line_length, &game->imgs->endian);
 	draw_floor_celling(game);
-	printf("%s\n", "naxren");
+	draw_wall(game);
 	mlx_put_image_to_window(game->mlx, game->mlx_win, game->imgs->img, 0, 0);
 	mlx_destroy_image(game->mlx, game->imgs->img);
 	

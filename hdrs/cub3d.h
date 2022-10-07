@@ -6,7 +6,7 @@
 /*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:58:45 by estrong           #+#    #+#             */
-/*   Updated: 2022/10/05 19:55:39 by estrong          ###   ########.fr       */
+/*   Updated: 2022/10/07 23:24:19 by estrong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,11 @@
 # include "../Libft/libft.h"
 // # include "../srcs/get_next_line.h"
 
-
+#define WIN_H 1000
+#define WIN_W 600
+#define PI 3.14159265
 
 // ############## struct ##############
-
-typedef struct s_raycasting
-{
-	float	dist;
-	float	pos_x;
-	float	pos_y;
-	t_img	texture;
-	int		s;
-};
 
 typedef struct	s_map
 {
@@ -56,21 +49,39 @@ typedef struct	s_img
 	int		size_y;
 }t_img;
 
+typedef struct s_raycasting
+{
+	double	dist;
+	double	pos_x;
+	double	pos_y;
+	// t_img	texture;
+	int		s;
+	double	rot;
+}t_raycasting;
+
+typedef struct s_pers
+{
+	double	rot;
+	double	y;
+	double	x;
+}t_pers;
+
 typedef struct	s_game
 {
-	float	pos;
-	t_img	*imgs;
-	t_map	*map;
-	void	*mlx;
-	void	*mlx_win;
-	char	*north;
-	char	*south;
-	char	*west;
-	char	*east;
-	int		fd;
-	char	*F;
-	char	*C;
-	char	orient;
+	t_raycasting	*rayc;
+	t_pers			*pers;
+	t_img			*imgs;
+	t_map			*map;
+	void			*mlx;
+	void			*mlx_win;
+	char			*north;
+	char			*south;
+	char			*west;
+	char			*east;
+	int				fd;
+	char			*F;
+	char			*C;
+	char			orient;
 }t_game;
 
 // ############## fun ##############
@@ -80,6 +91,8 @@ void	start(t_game *game);
 void	draw(t_game *game);
 int		create_trgb(int t, int r, int g, int b);
 void	draw_floor_celling(t_game *game);
+void	draw_wall(t_game *game);
+void	raycasting(t_game *game);
 
 // ############## fun ##############
 

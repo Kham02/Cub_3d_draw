@@ -6,11 +6,11 @@
 #    By: estrong <estrong@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 19:00:53 by estrong           #+#    #+#              #
-#    Updated: 2022/10/04 19:19:18 by estrong          ###   ########.fr        #
+#    Updated: 2022/10/07 23:17:25 by estrong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		= 	main.c	start.c
+SRCS		= 	main.c	start.c	draw_wall.c	raycast.c
 
 SRCS_B		= 
 
