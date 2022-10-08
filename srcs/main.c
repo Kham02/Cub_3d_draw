@@ -6,7 +6,7 @@
 /*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:02:07 by estrong           #+#    #+#             */
-/*   Updated: 2022/10/07 23:56:44 by estrong          ###   ########.fr       */
+/*   Updated: 2022/10/08 19:54:29 by estrong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ void    init_var(t_game *game)
 	game->F = ft_strdup("220,100,0");
 	game->orient = 'N';
     game->rayc = (t_raycasting *)malloc(sizeof(t_raycasting *));
-    game->rayc->rot = -1.0;
+    game->rayc->rot = 0.0;
+    game->rayc->step = -1.0;
     game->pers = (t_pers *)malloc(sizeof(t_pers *));
     game->pers->y = 5.0;
-    game->pers->x = 3.0;
+    game->pers->x = 2.0;
 }
 
 // void   error(char *err, t_game *game)

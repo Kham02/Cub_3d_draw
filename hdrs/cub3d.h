@@ -6,7 +6,7 @@
 /*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:58:45 by estrong           #+#    #+#             */
-/*   Updated: 2022/10/07 23:24:19 by estrong          ###   ########.fr       */
+/*   Updated: 2022/10/08 20:47:55 by estrong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 #define WIN_H 1000
 #define WIN_W 600
 #define PI 3.14159265
+#define FOW2 0.54	 
 
 // ############## struct ##############
 
@@ -57,6 +58,7 @@ typedef struct s_raycasting
 	// t_img	texture;
 	int		s;
 	double	rot;
+	double	step;
 }t_raycasting;
 
 typedef struct s_pers

@@ -6,7 +6,7 @@
 /*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 23:02:05 by estrong           #+#    #+#             */
-/*   Updated: 2022/10/07 23:47:40 by estrong          ###   ########.fr       */
+/*   Updated: 2022/10/08 20:21:58 by estrong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,24 @@ void	raycasting(t_game *game)
 	double	x;
 
 	y = game->pers->y;
-	x = game->pers->x;
+	x = 3.0;
 	// &game->map = &map;
-		printf("%s\n", "naxren");
+	printf("%e\n", x);
+		printf("%c\n", game->map->map[(int)y][(int)x]);
 	while (game->map->map && game->map->map[(int)y][(int)x] != '1')
 	{
-		// printf("%c\n", map.map[(int)y][(int)x]);
-		y = (y + 0.1);
+		printf("%s\n", "naxren");
+		y = y + (-1.0);
 	}
-	printf("%e\n", y);
+	game->rayc->dist = game->pers->y - y;
+	printf("%e\n", game->rayc->dist);
 }
 //  * game->rayc->rot
+
+void math(t_game *game)
+{
+	double height_wall;
+
+	height_wall = 0.0;
+	
+}
