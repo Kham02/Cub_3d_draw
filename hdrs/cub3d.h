@@ -6,7 +6,7 @@
 /*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:58:45 by estrong           #+#    #+#             */
-/*   Updated: 2022/10/08 20:47:55 by estrong          ###   ########.fr       */
+/*   Updated: 2022/10/10 22:28:53 by estrong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 #define WIN_W 600
 #define PI 3.14159265
 #define FOW2 0.54	 
+#define GR 0.017452
 
 // ############## struct ##############
 
@@ -50,6 +51,21 @@ typedef struct	s_img
 	int		size_y;
 }t_img;
 
+typedef struct s_local_vars
+{
+	int	startx;
+	int	starty;
+	int	endx;
+	int	endy;
+	int	y;
+	int	savex;
+	int	wall_clr;
+	int	floor_clr;
+	int	ceil_clr;
+	int	rad;
+	int	res;
+}	t_local;
+
 typedef struct s_raycasting
 {
 	double	dist;
@@ -59,7 +75,7 @@ typedef struct s_raycasting
 	int		s;
 	double	rot;
 	double	step;
-}t_raycasting;
+}t_ray;
 
 typedef struct s_pers
 {
@@ -90,11 +106,14 @@ typedef struct	s_game
 
 void    init_var(t_game *game);
 void	start(t_game *game);
+void	init_pers_rot(t_game *game);
 void	draw(t_game *game);
 int		create_trgb(int t, int r, int g, int b);
 void	draw_floor_celling(t_game *game);
+void	mini_draw(t_game *game);
 void	draw_wall(t_game *game);
-void	raycasting(t_game *game);
+
+// void	raycasting(t_game *game);
 
 // ############## fun ##############
 

@@ -6,11 +6,19 @@
 /*   By: estrong <estrong@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:22:06 by estrong           #+#    #+#             */
-/*   Updated: 2022/10/07 23:44:54 by estrong          ###   ########.fr       */
+/*   Updated: 2022/10/10 21:46:50 by estrong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../hdrs/cub3d.h"
+
+void	mini_draw(t_game *game)
+[
+	mlx_clear_window(game->mlx, game->mlx_win);
+	keycode(game);
+	draw_wall(game);
+	mlx_do_sync(map->mlx);
+]
 
 void	draw_floor_celling(t_game *game)
 {
@@ -49,7 +57,9 @@ void	start(t_game *game)
 	game->mlx = mlx_init();
 	game->mlx_win = mlx_new_window(game->mlx, 1000, 600, "Ice Nation");
 	draw(game);
+	init_pers_rot(game);
 	// mlx_hook(game->mlx_win, 2, (1L << 1), key, &game);
 	// mlx_hook(game->mlx_win, 17, (1L << 0), end_game, &game);
+	mlx_loop_hook(map.mlx.mlx, mini_draw, &map);
 	mlx_loop(game->mlx);
 }
